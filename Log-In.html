@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Muhamet">
+    <title>Log-In</title>
+    <style>
+        body {
+            background: linear-gradient(to right, rgb(150, 190, 185), rgb(255, 91, 99), rgb(1, 25, 95));
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .form {
+            background-color: rgba(150, 190, 185, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            text-align: center;
+            backdrop-filter: blur(25px);
+            background-image: url("Blury.jpg");
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+            animation: glow 5s infinite alternate;
+        }
+        
+        .h3 {
+            color: rgba(114, 19, 19, 0.671);
+            text-align: center;
+            font-size: xx-large;
+        }
+        
+        .name,.lastname,.password,.select,#email {
+            background-color: inherit;
+            color: black;
+            border: 2px dashed;
+            border-radius: 8px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        
+        #submit,#reset {
+            background-color: inherit;
+            color: red;
+            border: 1px solid;
+            border-radius: 8px;
+            width: 100%;
+            padding: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h3 class="h3" id="h3">Log In Platform</h3>
+            <br>
+            <form action="test.php" method="post">
+                <label for="text" class="name" id="name" name="name"><b>Name</b> </label><br><br>
+                <input type="text" class="name" id="name" required placeholder="Type your NAME">
+                <br><br>
+                <label for="text" class="lastname" id="lastname" name="Lastname"><b>Lastname</b> </label><br><br>
+                <input type="text" class="lastname" id="lastname" required placeholder="Type your LASTNAME">
+                <br><br>
+                <label for="email" class="email" id="email" name="email"><b>Email</b> </label><br><br>
+                <input type="email" name="email" id="email" required placeholder="Your Email">
+                <br><br>
+                <label for="password" class="password" id="password-label" name="Password"><b>Password</b></label><br><br>
+                <input type="password" class="password" id="password-input" required placeholder="Password">
+                <input type="checkbox" id="show-password">
+                <label for="show-password" id="show-password-label" name="show-password">Show Password</label>
+                <br><br>
+                <mark name="Your_Payment_Method"><big><b>Your Payment Method:</b> </big> </mark><br><br>
+                <select name="select" id="select" class="select">
+                    <option class="select" value="Visa" name="Visa">Visa</option>
+                    <option class="select" value="Master-Card" name="Master_Card">Master-Card</option>
+                    <option class="select" value="Maestro" name="Maestro">Maestro</option>
+                    <option class="select" value="Pay-Pal" name="Pay_Pal">Pay-Pal</option>
+                </select>
+                <br><br>
+                <input type="submit" name="submit" id="submit">
+                <input type="reset" name="reset" id="reset">
+            </form>
+        </div>
+    </div>
+    <script>
+        var showPasswordCheckbox = document.getElementById("show-password");
+        var passwordInput = document.getElementById("password-input");
+
+        showPasswordCheckbox.addEventListener("change", function() {
+            if (showPasswordCheckbox.checked) {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        });
+    </script>
+</body>
+</body>
+</html>
